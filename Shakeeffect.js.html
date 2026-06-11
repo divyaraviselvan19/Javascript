@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .shake {
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-10px);
+            }
+
+            50% {
+                transform: translateX(10px);
+            }
+
+            75% {
+                transform: translateX(-10px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="box" style="width:100px;height:100px;background:red;"></div>
+    <br>
+
+    <button onclick="shakeBox()">Shake</button>
+
+    <script>
+        function shakeBox() {
+            const box = document.getElementById("box");
+            box.classList.add("shake");
+
+            setTimeout(() => {
+                box.classList.remove("shake");
+            }, 500);
+        }
+    </script>
+
+</body>
+
+</html>
